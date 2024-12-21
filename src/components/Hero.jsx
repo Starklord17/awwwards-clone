@@ -10,17 +10,19 @@ const Hero = () => {
   const totalVideos = 4;
   const nextVideoRef = useRef(null);
 
-  const handleMiniVdClick = () => {
-    setHasClicked(true);
-    setIsLoading(true);
-    setCurrentIndex((prevIndex) => prevIndex + 1);
-  };
-
-  const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
-
   const handleVideoLoad = () => {
     setLoadedVideos((prev) => prev + 1);
   }
+
+  const upcomingVideoIndex = (currentIndex % totalVideos) + 1;
+
+  const handleMiniVdClick = () => {
+    setHasClicked(true);
+
+    setCurrentIndex(upcomingVideoIndex);
+  };
+
+  const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
 
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
