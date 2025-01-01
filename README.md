@@ -12,3 +12,4 @@ Currently, two official plugins are available:
 ## Resources
 
 - https://www.smashingmagazine.com/2023/12/new-css-viewport-units-not-solve-classic-scrollbar-problem/
+- https://gsap.com/docs/v3/
