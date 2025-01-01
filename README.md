@@ -14,3 +14,4 @@ Currently, two official plugins are available:
 - https://www.smashingmagazine.com/2023/12/new-css-viewport-units-not-solve-classic-scrollbar-problem/
 - https://gsap.com/docs/v3/
 - https://bennettfeely.com/clippy/
+- https://github.com/streamich/react-use
