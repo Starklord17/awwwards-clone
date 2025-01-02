@@ -1,32 +1,40 @@
 import { useRef } from "react";
 import AnimatedTitle from "./AnimatedTitle";
 import gsap from "gsap";
+import RoundedCorners from "./RoundedCorners";
+import Button from "./Button";
 
 const Story = () => {
   const frameRef = useRef("null");
 
+  /**
+   * Handles the mouse leave event by animating the element to reset its rotation.
+   * 
+   * This function uses GSAP to animate the rotation of the element referenced by `frameRef` 
+   * back to its original state (rotateX: 0, rotateY: 0) over a duration of 0.3 seconds with 
+   * an easing effect of "power1.inOut".
+   */
   const handleMouseLeave = () => {
     const element = frameRef.current;
-    
+
     gsap.to(element, {
       duration: 0.3,
       rotateX: 0,
       rotateY: 0,
-      ease: "power1.inOut"
-    })
+      ease: "power1.inOut",
+    });
   };
 
   /**
-   * Handles the mouse move event and calculates the position of the mouse
-   * relative to the element referenced by frameRef.
+   * Handles the mouse move event to apply a 3D rotation effect to an element.
    *
    * @param {MouseEvent} e - The mouse event object.
    */
   const handleMouseMove = (e) => {
-    const {clientX, clientY} = e;
+    const { clientX, clientY } = e;
     const element = frameRef.current;
 
-    if(!element) return;
+    if (!element) return;
 
     const rect = element.getBoundingClientRect();
     const x = clientX - rect.left;
@@ -40,10 +48,11 @@ const Story = () => {
 
     gsap.to(element, {
       duration: 0.3,
-      rotateX, rotateY,
+      rotateX,
+      rotateY,
       transformPerspective: 500, // 3D effect
-      ease: "power1.inOut"
-    })
+      ease: "power1.inOut",
+    });
   };
 
   return (
@@ -60,9 +69,9 @@ const Story = () => {
             containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10"
           />
 
-          <div className="story-img-container">
+          <figure className="story-img-container">
             <div className="story-img-mask">
-              <figure className="story-img-content">
+              <div className="story-img-content">
                 <img
                   ref={frameRef}
                   onMouseLeave={handleMouseLeave}
@@ -73,10 +82,27 @@ const Story = () => {
                   alt="entrance"
                   className="object-contain"
                 />
-              </figure>
+              </div>
             </div>
-          </div>
+
+            <RoundedCorners />
+          </figure>
         </header>
+
+        <div className="-mt-80 flex w-full justify-center md:-mt-64 md:me-44 md:justify-end">
+          <div className="flex h-full w-fit flex-col items-center md:items-start">
+            <p className="mt-3 max-w-sm text-center font-circular-web text-violet-50 md:text-start">
+              Where realms converge, lies Zentry and the boundless pillar.
+              Discover its secrets and shape your fate amidst infinite
+              opportunities.
+            </p>
+            <Button
+              id="realm-btn"
+              title="discover prologue"
+              containerClass="mt-5"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
