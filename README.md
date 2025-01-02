@@ -15,3 +15,4 @@ Currently, two official plugins are available:
 - https://gsap.com/docs/v3/
 - https://bennettfeely.com/clippy/
 - https://github.com/streamich/react-use
+- https://developer.mozilla.org/es/docs/Web/API/Element/getBoundingClientRect
