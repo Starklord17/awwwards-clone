@@ -12,6 +12,9 @@ export const BentoTilt = ({ children, className = "" }) => {
   const [transformStyle, setTransformStyle] = useState("");
   const itemRef = useRef(null);
 
+  /**
+   * Updates the 3D transform style based on mouse position relative to the component.
+   */
   const handleMouseMove = (event) => {
     if (!itemRef.current) return;
 
@@ -28,6 +31,9 @@ export const BentoTilt = ({ children, className = "" }) => {
     setTransformStyle(newTransform);
   };
 
+  /**
+   * Resets the 3D transform style on mouse leave.
+   */
   const handleMouseLeave = () => {
     setTransformStyle("");
   };
@@ -57,6 +63,9 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
   const [hoverOpacity, setHoverOpacity] = useState(0);
   const hoverButtonRef = useRef(null);
 
+  /**
+   * Tracks mouse position within the "Coming Soon" button for a radial hover effect.
+   */
   const handleMouseMove = (event) => {
     if (!hoverButtonRef.current) return;
     const rect = hoverButtonRef.current.getBoundingClientRect();
