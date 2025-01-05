@@ -147,7 +147,6 @@ const Features = () => (
             </>
           }
           description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
-          isComingSoon
         />
       </BentoTilt>
 
@@ -161,7 +160,6 @@ const Features = () => (
               </>
             }
             description="An anime and gaming-inspired NFT collection - the IP primed for expansion."
-            isComingSoon
           />
         </BentoTilt>
 
