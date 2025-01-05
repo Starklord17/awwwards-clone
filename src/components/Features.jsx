@@ -80,7 +80,7 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
   const handleMouseLeave = () => setHoverOpacity(0);
 
   return (
-    <div className="relative size-full">
+    <div id="metagame" className="relative size-full">
       <video
         src={src}
         loop
