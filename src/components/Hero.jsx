@@ -98,7 +98,7 @@ const Hero = () => {
   const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
 
   return (
-    <main className="relative h-dvh w-screen overflow-x-hidden">
+    <main id="main" className="relative h-dvh w-screen overflow-x-hidden">
 
       {isLoading && (
         <section className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
