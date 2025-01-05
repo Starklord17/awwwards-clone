@@ -1,10 +1,10 @@
 import { useRef, useState, useEffect } from "react";
-import Button from "./Button";
 import { TiLocationArrow } from "react-icons/ti";
 import { useWindowScroll } from "react-use";
+import Button from "./Button";
 import gsap from "gsap";
 
-const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
+const navItems = ["Main", "About", "Metagame", "Story", "Contact"];
 
 const NavBar = () => {
   const [isAudioPlaying, setisAudioPlaying] = useState(false);
